@@ -1,0 +1,64 @@
+# Api-Testing-Portfolio
+
+Using Postman and newman-reporter-htmlextra
+
+1. Reqres.in:
+https://reqres.in/
+
+** DOWNLOAD THE PROJECT AND FOLLOW THE INSTRUCTIONS BELOW **
+
+Reqres Api -- Instructions:
+1. Open Postman
+2. Import "book_api.json" file
+3. Go to Monitors > Create Monitor > Enter any Monitor name > Select from Collection: Reqres Collection > Scroll Down and click "Create Monitor" > Click Run
+4. (You can also run individual api test under Collections > Reqres test)
+
+Generate Report using newman-reporter-htmlextra -- Instructions:
+prerequisite: You must have npm installed in your system
+
+1. Open cmd and type: npm install -g newman-reporter-htmlextra
+2. navigate to folder directory of your saved "reqres_api.json" file
+3. open cmd/terminal in the root folder
+4. type: newman run reqres_api.json -r htmlextra --reporter-htmlextra-export ./results/report.html
+5. (wait for cmd to finish running.)
+6. It should generate new folder named "results"
+7. Open "results" then open "report"
+
+resource: https://www.npmjs.com/package/newman-reporter-htmlextra
+
+
+
+
+2. Simple Books Api Glitch Me:
+https://www.postman.com/eu6grp15/workspace/simple-books-api-glitch-me/documentation/18551292-ab5af4da-41cd-4fa3-a443-f0f6b38ec6b6
+
+
+Simple Book Api -- Instructions:
+1. Open Postman
+2. Import "book_api.json" file
+3. Go to "Authenticate User"
+4. Go to Body > raw > JSON
+5. enter your name under "clientName"
+6. enter your client email under "clientEmail"
+7. Click "send"
+8. Go to Response Body and copy "accessToken" value
+9. Go to Collections > Simple Book API > (...) / (3 dots) - to show option > edit > Variables
+10. paste your copied "accessToken" to accessToken > "INITIAL VALUE" and "CURRENT VALUE" and click save
+11. Go to Monitors > Create Monitor > Enter any Monitor name > Select from Collection: Simple Book API > Scroll Down and click "Create Monitor" > Click Run
+12. (You can also run individual api test under Collections > Simple Book API)
+
+Generate Report using newman-reporter-htmlextra -- Instructions:
+Export your updated API via json file:
+1. Go to Collections > Simple Book API > (...) / (3 dots) - to show option > Export > Collection v2.1 > Export > name it: book_api.postman_collection.json
+
+Generate report:
+prerequisite: You must have npm installed in your system
+1. Open cmd and type: npm install -g newman-reporter-htmlextra
+2. navigate to folder directory of your saved "book_api.json" file
+3. open cmd/terminal in the root folder
+4. type: newman run book_api.json -r htmlextra --reporter-htmlextra-export ./results/report.html
+5. (wait for cmd to finish running.)
+6. It should generate new folder named "results"
+7. Open "results" then open "report"
+
+resource: https://www.npmjs.com/package/newman-reporter-htmlextra
